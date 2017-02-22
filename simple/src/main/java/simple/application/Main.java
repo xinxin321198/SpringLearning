@@ -23,6 +23,10 @@ public class Main {
 		hello2.say();
 		
 		
+		//使用动态工厂构造
+		Hello hello3 = (Hello)applicationContext.getBean("hello3");
+		hello3.say();
+		
 	}
 
 }
