@@ -9,8 +9,20 @@ public class Main {
 		// TODO Auto-generated method stub
 		System.out.println("hello loserStar~~~~!!!");
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+		
+		//默认无参构造方法构造实例
 		Hello hello = (Hello)applicationContext.getBean("hello");
 		hello.say();
+		
+		//使用有参构造方法
+		Hello hello1 = (Hello)applicationContext.getBean("hello1");
+		hello1.say();
+		
+		//使用静态工厂构造
+		Hello hello2 = (Hello)applicationContext.getBean("hello2");
+		hello2.say();
+		
+		
 	}
 
 }
