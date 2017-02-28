@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
@@ -41,10 +42,65 @@
     <bean id="loserHello" class="simple.application.LoserHello">
     	<!--使用setter方式注入所依赖的bean,根据name来找  -->
     	<property name="hello" ref="hello2"></property>
+    	<!--使用常量注入  -->
+    	<property name="string" value="常量注入"></property>
+    	<!--数组注入  -->
+    	<property name="names">
+    		<array>
+    			<value>老罗</value>
+    			<value>隔壁老王</value>
+    			<value>花木兰</value>
+    			<value>丫丫丫</value>
+    		</array>
+    	</property>
+    	<!--list注入  -->
+    	<property name="list">
+    		<list>
+    			<value>list1</value>
+    			<value>list2</value>
+    			<value>list3</value>
+    			<value>list4</value>
+    		</list>
+    	</property>
+    	<!--map注入,map3依赖hello3这个使用动态工厂创建的bean  -->
+    	<property name="map">
+    		<map>
+    			<entry key="map1" value="map1vvv"></entry>
+    			<entry>
+    				<key><value>map2</value></key>
+    				<value>map2vvv</value>
+    			</entry>
+    			<entry key="map3" value-ref="hello3"></entry>
+    		</map>   	
+    	</property>
+    	
+    	<!-- set的注入 -->
+    	<property name="set">
+    		<set>
+    			<value>set1</value>
+    			<value>set2</value>
+    			<value>set3</value>
+    			<value>set4</value>
+    		</set>
+    	</property>
+    	
+    	
+    	<!--null注入  -->
+    	<property name="isNull"><null></null></property>
+    	
+    	
+    	<!--properties注入  -->
+    	<property name="properties">
+    		<props>
+    			<prop key="name">老罗头</prop>
+    			<prop key="age">35</prop>
+    			<prop key="address">大山嘎嘎里</prop>
+    		</props>
+    	</property>
     </bean>
     
     
     
-    
-    
+    <!--使用p，命名空间注入， 头文件加入xmlns:p="http://www.springframework.org/schema/p" -->
+    <bean id="loser2" class="simple.application.LoserHello2" p:s1="p命名空间注入1111" p:s2="p命名空间注入22222"></bean>
 </beans>

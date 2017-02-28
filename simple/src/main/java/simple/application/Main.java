@@ -2,6 +2,7 @@ package simple.application;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class Main {
 
@@ -9,7 +10,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		System.out.println("hello loserStar~~~~!!!");
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
-		
+//		ApplicationContext applicationContext2 = new FileSystemXmlApplicationContext("");//文件路径
 		//默认无参构造方法构造实例
 		Hello hello = (Hello)applicationContext.getBean("hello");
 		hello.say();
@@ -38,6 +39,10 @@ public class Main {
 		//使用class类型的方式获取bean,并且loserHello有个属性依赖于Hello
 		LoserHello loserHello = (LoserHello)applicationContext.getBean(LoserHello.class);
 		loserHello.say();
+		
+		//命名空间注入
+		LoserHello2 loser2 = (LoserHello2)applicationContext.getBean("loser2");
+		loser2.say();
 		
 	}
 
