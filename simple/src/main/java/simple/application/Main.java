@@ -27,6 +27,15 @@ public class Main {
 		Hello hello3 = (Hello)applicationContext.getBean("hello3");
 		hello3.say();
 		
+		
+		//使用别名调用hello3
+		Hello loser = (Hello)applicationContext.getBean("loser");
+		loser.say();
+		//使用别名调用hello3
+		Hello star = (Hello)applicationContext.getBean("star");
+		star.say();
+		
+		
 	}
 
 }
