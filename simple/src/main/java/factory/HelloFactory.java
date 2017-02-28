@@ -1,6 +1,6 @@
-package simple.application.factory;
+package factory;
 
-import simple.application.Hello;
+import application.Hello;
 
 public class HelloFactory {
 	

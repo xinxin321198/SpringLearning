@@ -1,4 +1,4 @@
-package simple.application;
+package application;
 
 /**
  * 用来测试p命名空间注入

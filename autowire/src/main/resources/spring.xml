@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd" ><!-- beans上也能设置自动装属性 -->
+
+	<!--指定一个实现的bean,更改此地方就可更改代码中userDao的实现，达到解耦目的  -->
+	<bean id="userDao" class="daoImp.UserDaoImp2"></bean>
+	
+	<!--自动装配，byName根据名称的依赖来进行自动装配，所依赖的对象得又对应的set方法，否则spring注入不进去  -->
+	<!-- byType，根据类型来注入，就不用根据设置bean的名称 ，但是同一种类型的bean只能有一个，不推荐-->
+	<!--no 不使用自动装配  -->
+	<!--constructor 当通过构造函数构造此bean时，根据所依赖的类型去查找对应的构造器进行注入。service中就必须有对应的构造方法  -->
+	<bean id="userService" class="service.UserService" autowire="byName"></bean>
+	
+</beans>

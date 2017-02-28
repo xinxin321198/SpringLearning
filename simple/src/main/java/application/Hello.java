@@ -1,4 +1,4 @@
-package simple.application;
+package application;
 
 public class Hello {
 	
