@@ -8,6 +8,13 @@
 	<!--默认调用 无参构造方法 ,单例模式-->
 <!--     <bean id="hello" class="simple.application.Hello" scope="single"/> -->
     <bean id="hello" class="simple.application.Hello"/>
+    <!-- 每次创建新的对象 -->
+    <bean id="hello" class="simple.application.Hello" scope="prototype"/>
+    <!--request  -->
+    <!--session  -->
+    <!-- global session -->
+    <!--application  -->
+    
     
     <!-- 使用有参构造方法创建 -->
     <bean id="hello1" class="simple.application.Hello">
