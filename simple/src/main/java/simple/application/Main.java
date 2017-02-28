@@ -35,7 +35,7 @@ public class Main {
 		Hello star = (Hello)applicationContext.getBean("star");
 		star.say();
 		
-		//使用class类型的方式获取bean
+		//使用class类型的方式获取bean,并且loserHello有个属性依赖于Hello
 		LoserHello loserHello = (LoserHello)applicationContext.getBean(LoserHello.class);
 		loserHello.say();
 		
