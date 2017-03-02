@@ -6,7 +6,7 @@ import invocationHandler.logInvocationHandler;
 import service.UserService;
 
 /**
- * 简单的动态代理的实现
+ * 简单的动态代理的实现，AOP
  * author: loserStar
  * date: 2017年3月2日上午10:17:01
  * email:362527240@qq.com
