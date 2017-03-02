@@ -7,7 +7,5 @@
         <!-- 定义好userService接口使用实现哪个类的bean -->
         <bean id="userService" class="serviceImp.UserServiceImp"></bean>	
         
-        <!--代理类中调用到userService，根据名称自动注入userService的bean进去  -->
-        <bean id="userServiceProxy" class="serviceProxy.UserServiceProxy" autowire="byName"></bean>
         
 </beans>

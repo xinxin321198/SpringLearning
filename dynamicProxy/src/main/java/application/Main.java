@@ -4,6 +4,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import invocationHandler.logInvocationHandler;
 import service.UserService;
+import utils.ProxyGeneratorUtils;
 
 /**
  * 简单的动态代理的实现，AOP
@@ -25,6 +26,11 @@ public class Main {
 		//把动态代理类转换为对应的接口类型
 		UserService userServiceProxy = (UserService)logInvocationHandler.getProxy();
 		userServiceProxy.getUser();
+		
+		
+		//测试观察：把调用类生成的代理类的class字节码文件输出到硬盘上，然后用jd反编译工具反编译出来看源码,实际上就跟静态代理的调用机制一样，帮你生成了一个实现userService接口的类，并且在方法体里增加了附加操作
+        ProxyGeneratorUtils.writeProxyClassToHardDisk(userService,"C:/userServiceProxy.class");  
+        System.out.println("字节码已经输出");
 	}
 
 }
