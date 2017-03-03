@@ -14,7 +14,5 @@
         <bean id="customer" class="customer.Customer"></bean><!-- 自定义的AOP调用代理类 -->	
         
         <!-- 使用注解，自动根据注解使用AOP -->
-        <aop:aspectj-autoproxy>
-        
-        </aop:aspectj-autoproxy>
+        <aop:aspectj-autoproxy/>
 </beans>
