@@ -9,11 +9,12 @@
         
         <!-- 定义好userService接口使用实现哪个类的bean -->
         <bean id="userService" class="serviceImp.UserServiceImp"></bean>	
+        <bean id="userService2" class="serviceImp.UserServiceImp2"></bean>	
         <!-- 初始化Log -->
-        <bean id="beforeLog" class="log.BeforeLog"></bean>	
-        <bean id="afterLog" class="log.AfterLog"></bean>	
+        <bean id="beforeLog" class="log.BeforeLog"></bean><!-- 之前执行的 -->	
+        <bean id="afterLog" class="log.AfterLog"></bean><!--之后执行的  -->	
         <aop:config>
-        	<aop:pointcut expression="execution(* serviceImp.UserServiceImp.*())" id="log" />
+        	<aop:pointcut expression="execution(* serviceImp.*.*())" id="log" />
         	<aop:advisor advice-ref="beforeLog"  pointcut-ref="log"/>
         	<aop:advisor advice-ref="afterLog" pointcut-ref="log"/>
         </aop:config>

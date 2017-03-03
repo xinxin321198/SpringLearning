@@ -21,6 +21,9 @@ public class Main {
 		
 		UserService userService = (UserService)applicationContext.getBean("userService");
 		userService.getUser();
+		
+		UserService userService2 = (UserService)applicationContext.getBean("userService2");
+		userService2.getUser();
 	}
 
 }
